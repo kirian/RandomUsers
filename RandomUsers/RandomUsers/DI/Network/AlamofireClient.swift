@@ -40,13 +40,13 @@ class AlamofireClient: NetworkClient {
         }
     }
     
-    public func requestArray<T: Mappable>(with definition: APIDefinition) -> Single<[T]> {
+    func requestArray<T: Mappable>(with definition: APIDefinition) -> Single<[T]> {
         let request = APIRequest(baseURL: baseURL, definition: definition)
         
         return Single<[T]>.create { single -> Disposable in
             let alamofireRequest = Alamofire.request(request)
                 .validate()
-                .responseArray(completionHandler: { (dataResponse: DataResponse<[T]>) in
+                .responseArray(keyPath: "results", completionHandler: { (dataResponse: DataResponse<[T]>) in
                     switch dataResponse.result {
                     case .success(let response):
                         single(.success(response))

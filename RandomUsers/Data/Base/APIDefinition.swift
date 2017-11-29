@@ -31,7 +31,7 @@ enum Method {
 }
 
 enum Version: String {
-    case v1 = "v1"
+    case v1 = "1.1"
 }
 
 extension Method {
