@@ -8,14 +8,6 @@
 
 import Foundation
 
-protocol Assembler: RandomUserListAssembler {
-    var networkClient: NetworkClient { get }
-}
+protocol Assembler: UserListAssembler {}
 
-class AppAssembler: Assembler {
-    var networkClient: NetworkClient
-    
-    init(networkClient: NetworkClient) {
-        self.networkClient = networkClient
-    }
-}
+class AppAssembler: Assembler {}

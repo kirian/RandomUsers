@@ -21,8 +21,6 @@ class GetUsersUseCase: GetUsersUseCaseType {
     }
     
     func execute() -> Single<[UserEntity]> {
-        return usersRepository.getUsers()/*.map {
-         TrialsMapper.transform(trialsEntities: $0)
-         }*/
+        return usersRepository.getUsers()
     }
 }

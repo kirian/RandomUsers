@@ -18,11 +18,18 @@
 		51602BC11FCD84AC00F07331 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BC01FCD84AC00F07331 /* NetworkClient.swift */; };
 		51602BC51FCD869200F07331 /* AlamofireClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BC41FCD869200F07331 /* AlamofireClient.swift */; };
 		51602BC71FCDDF0D00F07331 /* AppAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BC61FCDDF0D00F07331 /* AppAssembler.swift */; };
-		51602BC91FCDDFA000F07331 /* RandomUserListAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BC81FCDDFA000F07331 /* RandomUserListAssembler.swift */; };
-		51602BCC1FCDE1C300F07331 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BCB1FCDE1C300F07331 /* ViewController.swift */; };
-		51602BCE1FCDE1DE00F07331 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51602BCD1FCDE1DE00F07331 /* ViewController.xib */; };
+		51602BC91FCDDFA000F07331 /* UserListAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BC81FCDDFA000F07331 /* UserListAssembler.swift */; };
+		51602BCE1FCDE1DE00F07331 /* UserListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51602BCD1FCDE1DE00F07331 /* UserListViewController.xib */; };
 		51602BD11FCDE2E400F07331 /* InterfaceLoaderApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BD01FCDE2E400F07331 /* InterfaceLoaderApplicationService.swift */; };
 		51602BD31FCDE32900F07331 /* ApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BD21FCDE32900F07331 /* ApplicationService.swift */; };
+		51602BD81FCEB76B00F07331 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BD71FCEB76B00F07331 /* UsersRepository.swift */; };
+		51602BDA1FCEB7BB00F07331 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BD91FCEB7BB00F07331 /* UserEntity.swift */; };
+		51602BDC1FCEB80E00F07331 /* UsersRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BDB1FCEB80E00F07331 /* UsersRemoteDataSource.swift */; };
+		51602BDE1FCEBD3D00F07331 /* LocationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BDD1FCEBD3D00F07331 /* LocationEntity.swift */; };
+		51602BE01FCECB8000F07331 /* UserListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BDF1FCECB8000F07331 /* UserListPresenter.swift */; };
+		51602BE21FCED9E400F07331 /* UserListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BE11FCED9E400F07331 /* UserListRouter.swift */; };
+		51602BE51FCEE15200F07331 /* GetUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BE41FCEE15200F07331 /* GetUsersUseCase.swift */; };
+		51602BE71FCEF5AC00F07331 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BE61FCEF5AC00F07331 /* UserListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,11 +58,18 @@
 		51602BC01FCD84AC00F07331 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		51602BC41FCD869200F07331 /* AlamofireClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireClient.swift; sourceTree = "<group>"; };
 		51602BC61FCDDF0D00F07331 /* AppAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembler.swift; sourceTree = "<group>"; };
-		51602BC81FCDDFA000F07331 /* RandomUserListAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserListAssembler.swift; sourceTree = "<group>"; };
-		51602BCB1FCDE1C300F07331 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		51602BCD1FCDE1DE00F07331 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		51602BC81FCDDFA000F07331 /* UserListAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListAssembler.swift; sourceTree = "<group>"; };
+		51602BCD1FCDE1DE00F07331 /* UserListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListViewController.xib; sourceTree = "<group>"; };
 		51602BD01FCDE2E400F07331 /* InterfaceLoaderApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceLoaderApplicationService.swift; sourceTree = "<group>"; };
 		51602BD21FCDE32900F07331 /* ApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationService.swift; sourceTree = "<group>"; };
+		51602BD71FCEB76B00F07331 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
+		51602BD91FCEB7BB00F07331 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		51602BDB1FCEB80E00F07331 /* UsersRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRemoteDataSource.swift; sourceTree = "<group>"; };
+		51602BDD1FCEBD3D00F07331 /* LocationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEntity.swift; sourceTree = "<group>"; };
+		51602BDF1FCECB8000F07331 /* UserListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListPresenter.swift; sourceTree = "<group>"; };
+		51602BE11FCED9E400F07331 /* UserListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRouter.swift; sourceTree = "<group>"; };
+		51602BE41FCEE15200F07331 /* GetUsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersUseCase.swift; sourceTree = "<group>"; };
+		51602BE61FCEF5AC00F07331 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		C34B298F44EF9F4614345305 /* Pods-RandomUsers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomUsers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RandomUsers/Pods-RandomUsers.debug.xcconfig"; sourceTree = "<group>"; };
 		CEE81E4936DF97F209023EA3 /* Pods-RandomUsers-RandomUsersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomUsers-RandomUsersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RandomUsers-RandomUsersTests/Pods-RandomUsers-RandomUsersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E0269D425823FA4A0A2A5662 /* Pods-RandomUsers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomUsers.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomUsers/Pods-RandomUsers.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +150,7 @@
 		51602BA61FCD813A00F07331 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				51602BE31FCEE14000F07331 /* Users */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -144,8 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				51602BCF1FCDE2D600F07331 /* Application Services */,
-				51602BCA1FCDE1C300F07331 /* List */,
 				51602BC21FCD865000F07331 /* DI */,
+				51602BCA1FCDE1C300F07331 /* User List */,
 				51602BA91FCD813A00F07331 /* Assets.xcassets */,
 				51602BAA1FCD813A00F07331 /* LaunchScreen.storyboard */,
 				51602BAE1FCD813A00F07331 /* AppDelegate.swift */,
@@ -158,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				51602BB91FCD828500F07331 /* Base */,
+				51602BD41FCEB74900F07331 /* Users */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -177,7 +193,7 @@
 			children = (
 				51602BC31FCD865000F07331 /* Network */,
 				51602BC61FCDDF0D00F07331 /* AppAssembler.swift */,
-				51602BC81FCDDFA000F07331 /* RandomUserListAssembler.swift */,
+				51602BC81FCDDFA000F07331 /* UserListAssembler.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -190,13 +206,15 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		51602BCA1FCDE1C300F07331 /* List */ = {
+		51602BCA1FCDE1C300F07331 /* User List */ = {
 			isa = PBXGroup;
 			children = (
-				51602BCB1FCDE1C300F07331 /* ViewController.swift */,
-				51602BCD1FCDE1DE00F07331 /* ViewController.xib */,
+				51602BE61FCEF5AC00F07331 /* UserListViewController.swift */,
+				51602BCD1FCDE1DE00F07331 /* UserListViewController.xib */,
+				51602BDF1FCECB8000F07331 /* UserListPresenter.swift */,
+				51602BE11FCED9E400F07331 /* UserListRouter.swift */,
 			);
-			path = List;
+			path = "User List";
 			sourceTree = "<group>";
 		};
 		51602BCF1FCDE2D600F07331 /* Application Services */ = {
@@ -206,6 +224,41 @@
 				51602BD21FCDE32900F07331 /* ApplicationService.swift */,
 			);
 			path = "Application Services";
+			sourceTree = "<group>";
+		};
+		51602BD41FCEB74900F07331 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				51602BD51FCEB74900F07331 /* DataSource */,
+				51602BD61FCEB74900F07331 /* Models */,
+				51602BD71FCEB76B00F07331 /* UsersRepository.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		51602BD51FCEB74900F07331 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				51602BDB1FCEB80E00F07331 /* UsersRemoteDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		51602BD61FCEB74900F07331 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				51602BD91FCEB7BB00F07331 /* UserEntity.swift */,
+				51602BDD1FCEBD3D00F07331 /* LocationEntity.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		51602BE31FCEE14000F07331 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				51602BE41FCEE15200F07331 /* GetUsersUseCase.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,7 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51602BB21FCD813A00F07331 /* Assets.xcassets in Resources */,
-				51602BCE1FCDE1DE00F07331 /* ViewController.xib in Resources */,
+				51602BCE1FCDE1DE00F07331 /* UserListViewController.xib in Resources */,
 				51602BB31FCD813A00F07331 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,13 +491,20 @@
 			files = (
 				51602BD11FCDE2E400F07331 /* InterfaceLoaderApplicationService.swift in Sources */,
 				51602BB51FCD813A00F07331 /* AppDelegate.swift in Sources */,
+				51602BD81FCEB76B00F07331 /* UsersRepository.swift in Sources */,
 				51602BC51FCD869200F07331 /* AlamofireClient.swift in Sources */,
 				51602BC71FCDDF0D00F07331 /* AppAssembler.swift in Sources */,
+				51602BE51FCEE15200F07331 /* GetUsersUseCase.swift in Sources */,
+				51602BDC1FCEB80E00F07331 /* UsersRemoteDataSource.swift in Sources */,
 				51602BBB1FCD82A300F07331 /* APIDefinition.swift in Sources */,
 				51602BBF1FCD843000F07331 /* APIRequest.swift in Sources */,
+				51602BE71FCEF5AC00F07331 /* UserListViewController.swift in Sources */,
 				51602BD31FCDE32900F07331 /* ApplicationService.swift in Sources */,
-				51602BC91FCDDFA000F07331 /* RandomUserListAssembler.swift in Sources */,
-				51602BCC1FCDE1C300F07331 /* ViewController.swift in Sources */,
+				51602BDE1FCEBD3D00F07331 /* LocationEntity.swift in Sources */,
+				51602BDA1FCEB7BB00F07331 /* UserEntity.swift in Sources */,
+				51602BE21FCED9E400F07331 /* UserListRouter.swift in Sources */,
+				51602BC91FCDDFA000F07331 /* UserListAssembler.swift in Sources */,
+				51602BE01FCECB8000F07331 /* UserListPresenter.swift in Sources */,
 				51602BC11FCD84AC00F07331 /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

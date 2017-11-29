@@ -23,9 +23,7 @@ class APIRequest: URLRequestConvertible {
         let url = baseURL
         var urlRequest = URLRequest(url: url.appendingPathComponent(definition.version.rawValue).appendingPathComponent(definition.path))
         urlRequest.httpMethod = definition.method.alamofireMethod().rawValue
-        //urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        //urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
-        
+
         if (definition.method == .get) {
             urlRequest = try URLEncoding.default.encode(urlRequest, with: definition.parameters)
         } else {
