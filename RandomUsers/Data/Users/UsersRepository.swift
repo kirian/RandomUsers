@@ -25,6 +25,6 @@ class UsersRepository: UsersRepositoryType {
     }
     
     func getUsers() -> Single<[UserEntity]> {
-        return remoteDataSource.getUsers()
+        return remoteDataSource.getUsers(results: 50)
     }
 }

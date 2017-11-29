@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserListViewController" customModule="RandomUsers" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="obX-g4-BJv" id="SdO-gv-5T0"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kbJ-PE-7Aw"/>
             </connections>
         </placeholder>
@@ -19,8 +20,27 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="obX-g4-BJv">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vgD-Ok-PNm">
+                        <size key="itemSize" width="375" height="120"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="obX-g4-BJv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CEL-yF-Kkv"/>
+                <constraint firstItem="obX-g4-BJv" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="ZbT-CL-dOu"/>
+                <constraint firstItem="obX-g4-BJv" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="mvM-wo-OOp"/>
+                <constraint firstItem="obX-g4-BJv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yEt-jN-J2z"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="104.5"/>
         </view>
     </objects>
 </document>

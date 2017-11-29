@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 protocol UsersRemoteDataSourceType {
-    func getUsers() -> Single<[UserEntity]>
+    func getUsers(results: UInt16) -> Single<[UserEntity]>
 }
 
 class UsersRemoteDataSource: UsersRemoteDataSourceType {
@@ -20,8 +20,8 @@ class UsersRemoteDataSource: UsersRemoteDataSourceType {
         self.networkClient = networkClient
     }
 
-    func getUsers() -> Single<[UserEntity]> {
-        return networkClient.requestArray(with: UsersAPIDefinition.list(results: 5))
+    func getUsers(results: UInt16) -> Single<[UserEntity]> {
+        return networkClient.requestArray(with: UsersAPIDefinition.list(results: results))
     }
     
     // MARK: APIDefinition

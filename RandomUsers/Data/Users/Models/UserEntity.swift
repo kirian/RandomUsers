@@ -16,6 +16,7 @@ class UserEntity: Mappable {
     var nameLast: String?
     var location: LocationEntity?
     var email: String?
+    var phone: String?
     var registered: Date?
     var picture: String?
     
@@ -27,6 +28,7 @@ class UserEntity: Mappable {
          nameLast: String?,
          location: LocationEntity?,
          email: String?,
+         phone: String?,
          registered: Date?,
          picture: String?) {
         self.gender = gender
@@ -35,6 +37,7 @@ class UserEntity: Mappable {
         self.nameLast = nameLast
         self.location = location
         self.email = email
+        self.phone = phone
         self.registered = registered
         self.picture = picture
     }
@@ -47,7 +50,8 @@ class UserEntity: Mappable {
         nameLast    <- map["name.last"]
         location    <- map["location"]
         email       <- map["email"]
+        phone       <- map["phone"]
         registered  <- (map["registered"], dateTransform)
-        picture     <- map["picture"]
+        picture     <- map["picture.large"]
     }
 }
