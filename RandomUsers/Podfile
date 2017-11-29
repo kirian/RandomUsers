@@ -4,6 +4,7 @@ use_frameworks!
 def appPods
     pod 'RxSwift', '~> 4.0.0'
     pod 'AlamofireObjectMapper', '~> 5.0.0'
+    pod 'Kingfisher', '~> 4.2.0'
 end
 
 target 'RandomUsers' do
