@@ -61,13 +61,19 @@ extension UserListViewController: UserListView {
     }
 }
 
-extension UserListViewController: UICollectionViewDelegate {
+extension UserListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter.didTapCell(at: indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         presenter.willDisplayItem(at: indexPath.row, itemCount: dataSource.adapter.itemCount())
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+        dataSource.adapter.removeItem(at: indexPath)
+        //groceryList.remove(at: indexPath.row)
+        collectionView.deleteItems(at: [indexPath])
     }
 }
 

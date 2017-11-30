@@ -17,7 +17,7 @@ protocol CollectionViewAdapter {
     func sectionCount() -> Int
     func item(at indexPath: IndexPath) -> DataType
     func update(sectionsData: [[DataType]])
-    
+    func removeItem(at indexPath: IndexPath)
     func cellForCollectionView(collectionView: UICollectionView, item: DataType, indexPath: IndexPath) -> UICollectionViewCell
     func supplementaryViewForCollectionView(collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView?
 }

@@ -41,5 +41,6 @@ class UserListCollectionViewCell: BaseCollectionViewCell {
 
     override func setupView() {
         super.setupView()
+        contentView.backgroundColor = UIColor.white
     }
 }

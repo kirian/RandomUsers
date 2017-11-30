@@ -46,6 +46,10 @@ class ArrayAdapter<T>: CollectionViewAdapter {
         }
     }
     
+    func removeItem(at indexPath: IndexPath) {
+        self.data.remove(at: indexPath.row)
+    }
+    
     func cellForCollectionView(collectionView: UICollectionView, item: T, indexPath: IndexPath) -> UICollectionViewCell {
         fatalError("\(String(describing: self)) should override \(#function) method.")
     }
