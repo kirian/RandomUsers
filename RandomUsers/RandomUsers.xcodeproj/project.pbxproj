@@ -39,6 +39,7 @@
 		51602BF81FCF01D900F07331 /* UserListCollectionViewCellRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BF71FCF01D900F07331 /* UserListCollectionViewCellRenderer.swift */; };
 		51602BFB1FCF0E4F00F07331 /* UserListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BF91FCF0E4F00F07331 /* UserListCollectionViewCell.swift */; };
 		51602BFC1FCF0E4F00F07331 /* UserListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51602BFA1FCF0E4F00F07331 /* UserListCollectionViewCell.xib */; };
+		51602BFE1FD066F300F07331 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BFD1FD066F300F07331 /* ArrayExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		51602BF71FCF01D900F07331 /* UserListCollectionViewCellRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCollectionViewCellRenderer.swift; sourceTree = "<group>"; };
 		51602BF91FCF0E4F00F07331 /* UserListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCollectionViewCell.swift; sourceTree = "<group>"; };
 		51602BFA1FCF0E4F00F07331 /* UserListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListCollectionViewCell.xib; sourceTree = "<group>"; };
+		51602BFD1FD066F300F07331 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		C34B298F44EF9F4614345305 /* Pods-RandomUsers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomUsers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RandomUsers/Pods-RandomUsers.debug.xcconfig"; sourceTree = "<group>"; };
 		CEE81E4936DF97F209023EA3 /* Pods-RandomUsers-RandomUsersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomUsers-RandomUsersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RandomUsers-RandomUsersTests/Pods-RandomUsers-RandomUsersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E0269D425823FA4A0A2A5662 /* Pods-RandomUsers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomUsers.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomUsers/Pods-RandomUsers.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,7 +180,7 @@
 			children = (
 				51602BCF1FCDE2D600F07331 /* Application Services */,
 				51602BC21FCD865000F07331 /* DI */,
-				51602BE81FCEFE2200F07331 /* Base UI */,
+				51602BE81FCEFE2200F07331 /* Base */,
 				51602BCA1FCDE1C300F07331 /* User List */,
 				51602BA91FCD813A00F07331 /* Assets.xcassets */,
 				51602BAA1FCD813A00F07331 /* LaunchScreen.storyboard */,
@@ -282,12 +284,13 @@
 			path = Users;
 			sourceTree = "<group>";
 		};
-		51602BE81FCEFE2200F07331 /* Base UI */ = {
+		51602BE81FCEFE2200F07331 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				51602BE91FCEFE2200F07331 /* Collection View */,
+				51602BFD1FD066F300F07331 /* ArrayExtension.swift */,
 			);
-			path = "Base UI";
+			path = Base;
 			sourceTree = "<group>";
 		};
 		51602BE91FCEFE2200F07331 /* Collection View */ = {
@@ -570,6 +573,7 @@
 				51602BC91FCDDFA000F07331 /* UserListAssembler.swift in Sources */,
 				51602BE01FCECB8000F07331 /* UserListPresenter.swift in Sources */,
 				51602BC11FCD84AC00F07331 /* NetworkClient.swift in Sources */,
+				51602BFE1FD066F300F07331 /* ArrayExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

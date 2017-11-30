@@ -55,3 +55,14 @@ class UserEntity: Mappable {
         picture     <- map["picture.large"]
     }
 }
+
+extension UserEntity: Equatable {
+    static func ==(lhs: UserEntity, rhs: UserEntity) -> Bool {
+        if let lhsEmail = lhs.email,
+            let rhsEmail = rhs.email {
+        return lhsEmail.range(of: rhsEmail) != nil
+        } else {
+            return false
+        }
+    }
+}

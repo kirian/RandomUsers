@@ -16,6 +16,8 @@ class UserListCollectionViewCellRenderer {
         if let name = userModel.nameFirst,
             let surname = userModel.nameLast {
             cell.name = name + " " + surname
+        } else {
+            cell.name = nil
         }
 
         cell.email = userModel.email
@@ -23,6 +25,8 @@ class UserListCollectionViewCellRenderer {
         
         if let picture = userModel.picture {
             cell.imageURL = URL(string: picture)
+        } else {
+            cell.imageURL = nil
         }
         
         return cell
