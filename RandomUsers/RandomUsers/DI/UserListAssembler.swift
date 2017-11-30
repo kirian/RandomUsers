@@ -15,11 +15,14 @@ protocol UserListAssembler {
     func resolve() -> UsersRepositoryType
     func resolve() -> UsersRemoteDataSourceType
     func resolve() -> NetworkClient
+    func resolve() -> UserListAdapter
+    func resolve(with adapter: UserListAdapter) -> CollectionViewDataSource<UserListAdapter>
 }
 
 extension UserListAssembler {
     func resolve() -> UserListViewController {
-        let viewController = UserListViewController(presenter: resolve())
+        let viewController = UserListViewController(presenter: resolve(),
+                                                    dataSource: resolve(with: resolve()))
         
         return viewController
     }
@@ -41,6 +44,14 @@ extension UserListAssembler {
     }
     
     func resolve() -> NetworkClient {
-        return AlamofireClient(baseURL: URL(string: "http://api.randomuser.me/")!)
+        return AlamofireClient(baseURL: URL(string: "https://api.randomuser.me/")!)
+    }
+    
+    func resolve() -> UserListAdapter {
+        return UserListAdapter()
+    }
+    
+    func resolve(with adapter: UserListAdapter) -> CollectionViewDataSource<UserListAdapter> {
+        return CollectionViewDataSource(adapter: adapter)
     }
 }
