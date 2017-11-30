@@ -41,45 +41,54 @@ class BaseCollectionViewCell: UICollectionViewCell {
     func setupView() {
         backgroundColor = UIColor.red
         insertSubview(deleteLabel, belowSubview: contentView)
-        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(onPanGestureRecognizer(_:)))
-        if let pan = panGestureRecognizer {
-            pan.delegate = self
-            addGestureRecognizer(pan)
+        
+        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: .gestureDidRecognizePan)
+        if let gesture = panGestureRecognizer {
+            gesture.delegate = self
+            addGestureRecognizer(gesture)
         }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        guard let pan = panGestureRecognizer else {
-            return
-        }
-        
-        if (pan.state == UIGestureRecognizerState.changed) {
-            let p: CGPoint = pan.translation(in: self)
-            let width = contentView.frame.width
-            let height = contentView.frame.height
-            contentView.frame = CGRect(x: p.x,y: 0, width: width, height: height);
-            deleteLabel.frame = CGRect(x: p.x + width + deleteLabel.frame.size.width, y: 0, width: 100, height: height)
+        if let gesture = panGestureRecognizer {
+            if (gesture.state == UIGestureRecognizerState.changed) {
+                let p: CGPoint = gesture.translation(in: self)
+                let width = contentView.frame.width
+                let height = contentView.frame.height
+                contentView.frame = CGRect(x: p.x,y: 0, width: width, height: height);
+                deleteLabel.frame = CGRect(x: p.x + width + deleteLabel.frame.size.width, y: 0,
+                                           width: width * 0.2, height: height)
+            }
         }
     }
     
-    @objc func onPanGestureRecognizer(_ panGesture: UIPanGestureRecognizer) {
-        if panGesture.state == UIGestureRecognizerState.began {
-            
-        } else if panGesture.state == UIGestureRecognizerState.changed {
+    @objc fileprivate func gestureDidRecognizePan(_ panGesture: UIPanGestureRecognizer) {
+        switch panGesture.state {
+        case .began:
+            break
+        case .changed:
             setNeedsLayout()
-        } else {
-            if abs(panGesture.velocity(in: self).x) > 500 {
-                let collectionView: UICollectionView = superview as! UICollectionView
-                let indexPath: IndexPath = collectionView.indexPathForItem(at: center)!
-                collectionView.delegate?.collectionView!(collectionView, performAction: #selector(onPanGestureRecognizer(_:)), forItemAt: indexPath, withSender: nil)
-            } else {
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.setNeedsLayout()
-                    self.layoutIfNeeded()
-                })
+        default:
+            performGesture(panGesture)
+        }
+    }
+    
+    private func performGesture(_ panGesture: UIPanGestureRecognizer) {
+        if abs(panGesture.velocity(in: self).x) > 400 {
+            if let collectionView: UICollectionView = superview as? UICollectionView,
+                let indexPath: IndexPath = collectionView.indexPathForItem(at: center) {
+                collectionView.delegate?.collectionView!(collectionView,
+                                                         performAction:.gestureDidRecognizePan,
+                                                         forItemAt: indexPath,
+                                                         withSender: nil)
             }
+        } else {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.setNeedsLayout()
+                self.layoutIfNeeded()
+            })
         }
     }
 }
@@ -96,4 +105,9 @@ extension BaseCollectionViewCell: UIGestureRecognizerDelegate {
         
         return ((pan.velocity(in: pan.view)).x) < 0
     }
+}
+
+
+fileprivate extension Selector {
+    static let gestureDidRecognizePan = #selector(BaseCollectionViewCell.gestureDidRecognizePan)
 }
