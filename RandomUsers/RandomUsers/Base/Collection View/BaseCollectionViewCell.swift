@@ -20,7 +20,6 @@ class BaseCollectionViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupView()
     }
     
@@ -30,7 +29,6 @@ class BaseCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         setupView()
     }
     
@@ -76,7 +74,7 @@ class BaseCollectionViewCell: UICollectionViewCell {
     }
     
     private func performGesture(_ panGesture: UIPanGestureRecognizer) {
-        if abs(panGesture.velocity(in: self).x) > 400 {
+        if abs(panGesture.velocity(in: self).x) > 550 {
             if let collectionView: UICollectionView = superview as? UICollectionView,
                 let indexPath: IndexPath = collectionView.indexPathForItem(at: center) {
                 collectionView.delegate?.collectionView!(collectionView,
@@ -102,11 +100,12 @@ extension BaseCollectionViewCell: UIGestureRecognizerDelegate {
         guard let pan = panGestureRecognizer else {
             return false
         }
+        let panX = (pan.velocity(in: pan.view)).x
+        let panY = (pan.velocity(in: pan.view)).y
         
-        return ((pan.velocity(in: pan.view)).x) < 0
+        return (abs(panX) > abs(panY)) && (panX < 0)
     }
 }
-
 
 fileprivate extension Selector {
     static let gestureDidRecognizePan = #selector(BaseCollectionViewCell.gestureDidRecognizePan)
