@@ -12,7 +12,7 @@ import RxSwift
 protocol UserListView: class {
     func showLoadingView()
     func hideLoadingView()
-    func show(users: [UserEntity])
+    func show(users: [User])
     func scrollToItem(at index: Int)
 }
 
@@ -21,20 +21,23 @@ protocol UserListPresenterType {
     func viewDidLoad()
     func willDisplayItem(at index: Int, itemCount: Int)
     func filterUsers(by text: String)
-    func didTapCell(at: IndexPath)
+    func didTapCell(at index: Int)
     func didTapSearchCancel()
 }
 
 class UserListPresenter: UserListPresenterType {
     weak var view: UserListView?
     private let getUsersUseCase: GetUsersUseCaseType
+    private let userDetailRouter: UserDetailRouterType
     private let disposeBag: DisposeBag = DisposeBag()
-    fileprivate var users: [UserEntity] = []
-    fileprivate var filteredUsers: [UserEntity] = []
+    fileprivate var users: [User] = []
+    fileprivate var filteredUsers: [User] = []
     fileprivate var isFiltering:Bool = false
     
-    init(getUsersUseCase: GetUsersUseCaseType) {
+    init(getUsersUseCase: GetUsersUseCaseType,
+         userDetailRouter: UserDetailRouterType) {
         self.getUsersUseCase = getUsersUseCase
+        self.userDetailRouter = userDetailRouter
     }
     
     func viewDidLoad() {
@@ -46,10 +49,10 @@ class UserListPresenter: UserListPresenterType {
         isFiltering = !text.isEmpty
         if isFiltering {
             let lowercasedText = text.lowercased()
-            filteredUsers = users.filter { userEntity -> Bool in
-                return userEntity.nameFirst?.lowercased().range(of:lowercasedText) != nil ||
-                    userEntity.nameLast?.lowercased().range(of:lowercasedText) != nil ||
-                    userEntity.email?.lowercased().range(of:lowercasedText) != nil
+            filteredUsers = users.filter { user -> Bool in
+                return user.nameFirst?.lowercased().range(of:lowercasedText) != nil ||
+                    user.nameLast?.lowercased().range(of:lowercasedText) != nil ||
+                    user.email?.lowercased().range(of:lowercasedText) != nil
             }
             view?.show(users: filteredUsers)
         } else {
@@ -57,8 +60,10 @@ class UserListPresenter: UserListPresenterType {
         }
     }
     
-    func didTapCell(at: IndexPath) {
-        // TODO: Navigate to detail
+    func didTapCell(at index: Int) {
+        if let view = view as? UIViewController {
+            userDetailRouter.navigateTo(user: users[index], sourceViewController: view)
+        }
     }
     
     func didTapSearchCancel() {

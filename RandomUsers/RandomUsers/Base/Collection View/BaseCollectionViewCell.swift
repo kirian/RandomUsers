@@ -11,7 +11,7 @@ import UIKit
 
 class BaseCollectionViewCell: UICollectionViewCell {
     fileprivate var panGestureRecognizer: UIPanGestureRecognizer?
-    fileprivate var deleteLabel: UILabel = {
+    fileprivate lazy var deleteLabel: UILabel = {
         let label = UILabel()
         label.text = "delete"
         label.textColor = UIColor.white

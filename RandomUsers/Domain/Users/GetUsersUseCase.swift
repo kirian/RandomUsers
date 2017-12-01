@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 protocol GetUsersUseCaseType {
-    func execute() -> Single<[UserEntity]>
+    func execute() -> Single<[User]>
 }
 
 class GetUsersUseCase: GetUsersUseCaseType {
@@ -20,14 +20,15 @@ class GetUsersUseCase: GetUsersUseCaseType {
         self.usersRepository = usersRepository
     }
     
-    func execute() -> Single<[UserEntity]> {
-        return usersRepository.getUsers().map { userEntities -> [UserEntity] in
+    func execute() -> Single<[User]> {
+        return usersRepository.getUsers().map { userEntities -> [User] in
             let entities = userEntities.removeDuplicates()
-            return self.sortUsersByName(userEntities: entities)
+            let users:[User] = UserMapper.transform(userEntities: entities)
+            return self.sortUsersByName(userEntities: users)
         }
     }
     
-    fileprivate func sortUsersByName(userEntities: [UserEntity]) -> [UserEntity] {
+    fileprivate func sortUsersByName(userEntities: [User]) -> [User] {
         return userEntities.sorted { (first, next) -> Bool in
             if let firstName = first.nameFirst,
                 let nextName = next.nameFirst {

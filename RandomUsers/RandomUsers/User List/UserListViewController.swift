@@ -42,7 +42,7 @@ class UserListViewController: UIViewController {
     private func setupCollectionView() {
         collectionView.dataSource = dataSource
         collectionView.delegate = self
-        collectionView.rand_registerCell(UserListCollectionViewCell.self)
+        collectionView.rnd_users_registerCell(UserListCollectionViewCell.self)
     }
 }
 
@@ -50,7 +50,7 @@ extension UserListViewController: UserListView {
     func showLoadingView() {}
     func hideLoadingView() {}
     
-    func show(users: [UserEntity]) {
+    func show(users: [User]) {
         dataSource.updateSource(sectionsData: users)
         collectionView.reloadData()
     }
@@ -63,7 +63,7 @@ extension UserListViewController: UserListView {
 
 extension UserListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter.didTapCell(at: indexPath)
+        presenter.didTapCell(at: indexPath.row)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

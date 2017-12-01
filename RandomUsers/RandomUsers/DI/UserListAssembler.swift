@@ -17,9 +17,10 @@ protocol UserListAssembler {
     func resolve() -> NetworkClient
     func resolve() -> UserListAdapter
     func resolve(with adapter: UserListAdapter) -> CollectionViewDataSource<UserListAdapter>
+    func resolve() -> UserDetailRouterType
 }
 
-extension UserListAssembler {
+extension UserListAssembler where Self: Assembler {
     func resolve() -> UserListViewController {
         let viewController = UserListViewController(presenter: resolve(),
                                                     dataSource: resolve(with: resolve()))
@@ -28,7 +29,8 @@ extension UserListAssembler {
     }
     
     func resolve() -> UserListPresenterType {
-        return UserListPresenter(getUsersUseCase: resolve())
+        return UserListPresenter(getUsersUseCase: resolve(),
+                                 userDetailRouter: resolve())
     }
     
     func resolve() -> GetUsersUseCaseType {
@@ -53,5 +55,9 @@ extension UserListAssembler {
     
     func resolve(with adapter: UserListAdapter) -> CollectionViewDataSource<UserListAdapter> {
         return CollectionViewDataSource(adapter: adapter)
+    }
+    
+    func resolve() -> UserDetailRouterType {
+        return UserDetailRouter(assembler: self)
     }
 }

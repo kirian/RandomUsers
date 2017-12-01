@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol Assembler: UserListAssembler {}
+protocol Assembler: UserListAssembler, UserDetailAssembler {}
 
 class AppAssembler: Assembler {}

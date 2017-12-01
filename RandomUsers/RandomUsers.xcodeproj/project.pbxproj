@@ -25,7 +25,6 @@
 		51602BD81FCEB76B00F07331 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BD71FCEB76B00F07331 /* UsersRepository.swift */; };
 		51602BDA1FCEB7BB00F07331 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BD91FCEB7BB00F07331 /* UserEntity.swift */; };
 		51602BDC1FCEB80E00F07331 /* UsersRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BDB1FCEB80E00F07331 /* UsersRemoteDataSource.swift */; };
-		51602BDE1FCEBD3D00F07331 /* LocationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BDD1FCEBD3D00F07331 /* LocationEntity.swift */; };
 		51602BE01FCECB8000F07331 /* UserListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BDF1FCECB8000F07331 /* UserListPresenter.swift */; };
 		51602BE21FCED9E400F07331 /* UserListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BE11FCED9E400F07331 /* UserListRouter.swift */; };
 		51602BE51FCEE15200F07331 /* GetUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BE41FCEE15200F07331 /* GetUsersUseCase.swift */; };
@@ -40,6 +39,18 @@
 		51602BFB1FCF0E4F00F07331 /* UserListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BF91FCF0E4F00F07331 /* UserListCollectionViewCell.swift */; };
 		51602BFC1FCF0E4F00F07331 /* UserListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51602BFA1FCF0E4F00F07331 /* UserListCollectionViewCell.xib */; };
 		51602BFE1FD066F300F07331 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602BFD1FD066F300F07331 /* ArrayExtension.swift */; };
+		51602C021FD074B200F07331 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602C001FD074B200F07331 /* UserDetailViewController.swift */; };
+		51602C031FD074B200F07331 /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51602C011FD074B200F07331 /* UserDetailViewController.xib */; };
+		51602C051FD074F400F07331 /* UserDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602C041FD074F400F07331 /* UserDetailRouter.swift */; };
+		51602C071FD0750100F07331 /* UserDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602C061FD0750100F07331 /* UserDetailPresenter.swift */; };
+		51602C091FD0752800F07331 /* UserDetailAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602C081FD0752800F07331 /* UserDetailAssembler.swift */; };
+		51602C0B1FD141F200F07331 /* RegisteredDataTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602C0A1FD141F200F07331 /* RegisteredDataTransform.swift */; };
+		51602C0E1FD1521300F07331 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602C0D1FD1521300F07331 /* User.swift */; };
+		51602C101FD1521D00F07331 /* UserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602C0F1FD1521D00F07331 /* UserMapper.swift */; };
+		51602C121FD152DF00F07331 /* UserLocationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602C111FD152DE00F07331 /* UserLocationEntity.swift */; };
+		51602C141FD152F400F07331 /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602C131FD152F400F07331 /* UserLocation.swift */; };
+		51602C161FD153C100F07331 /* UserLocationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602C151FD153C100F07331 /* UserLocationMapper.swift */; };
+		51602C181FD17B2E00F07331 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51602C171FD17B2E00F07331 /* ImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +86,6 @@
 		51602BD71FCEB76B00F07331 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
 		51602BD91FCEB7BB00F07331 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		51602BDB1FCEB80E00F07331 /* UsersRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRemoteDataSource.swift; sourceTree = "<group>"; };
-		51602BDD1FCEBD3D00F07331 /* LocationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEntity.swift; sourceTree = "<group>"; };
 		51602BDF1FCECB8000F07331 /* UserListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListPresenter.swift; sourceTree = "<group>"; };
 		51602BE11FCED9E400F07331 /* UserListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRouter.swift; sourceTree = "<group>"; };
 		51602BE41FCEE15200F07331 /* GetUsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersUseCase.swift; sourceTree = "<group>"; };
@@ -90,6 +100,18 @@
 		51602BF91FCF0E4F00F07331 /* UserListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCollectionViewCell.swift; sourceTree = "<group>"; };
 		51602BFA1FCF0E4F00F07331 /* UserListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListCollectionViewCell.xib; sourceTree = "<group>"; };
 		51602BFD1FD066F300F07331 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		51602C001FD074B200F07331 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		51602C011FD074B200F07331 /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
+		51602C041FD074F400F07331 /* UserDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRouter.swift; sourceTree = "<group>"; };
+		51602C061FD0750100F07331 /* UserDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailPresenter.swift; sourceTree = "<group>"; };
+		51602C081FD0752800F07331 /* UserDetailAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailAssembler.swift; sourceTree = "<group>"; };
+		51602C0A1FD141F200F07331 /* RegisteredDataTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredDataTransform.swift; sourceTree = "<group>"; };
+		51602C0D1FD1521300F07331 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		51602C0F1FD1521D00F07331 /* UserMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapper.swift; sourceTree = "<group>"; };
+		51602C111FD152DE00F07331 /* UserLocationEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocationEntity.swift; sourceTree = "<group>"; };
+		51602C131FD152F400F07331 /* UserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
+		51602C151FD153C100F07331 /* UserLocationMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationMapper.swift; sourceTree = "<group>"; };
+		51602C171FD17B2E00F07331 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		C34B298F44EF9F4614345305 /* Pods-RandomUsers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomUsers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RandomUsers/Pods-RandomUsers.debug.xcconfig"; sourceTree = "<group>"; };
 		CEE81E4936DF97F209023EA3 /* Pods-RandomUsers-RandomUsersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomUsers-RandomUsersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RandomUsers-RandomUsersTests/Pods-RandomUsers-RandomUsersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E0269D425823FA4A0A2A5662 /* Pods-RandomUsers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomUsers.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomUsers/Pods-RandomUsers.release.xcconfig"; sourceTree = "<group>"; };
@@ -182,6 +204,7 @@
 				51602BC21FCD865000F07331 /* DI */,
 				51602BE81FCEFE2200F07331 /* Base */,
 				51602BCA1FCDE1C300F07331 /* User List */,
+				51602BFF1FD0749B00F07331 /* User Detail */,
 				51602BA91FCD813A00F07331 /* Assets.xcassets */,
 				51602BAA1FCD813A00F07331 /* LaunchScreen.storyboard */,
 				51602BAE1FCD813A00F07331 /* AppDelegate.swift */,
@@ -205,6 +228,7 @@
 				51602BBA1FCD82A300F07331 /* APIDefinition.swift */,
 				51602BBE1FCD843000F07331 /* APIRequest.swift */,
 				51602BC01FCD84AC00F07331 /* NetworkClient.swift */,
+				51602C0A1FD141F200F07331 /* RegisteredDataTransform.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -215,6 +239,7 @@
 				51602BC31FCD865000F07331 /* Network */,
 				51602BC61FCDDF0D00F07331 /* AppAssembler.swift */,
 				51602BC81FCDDFA000F07331 /* UserListAssembler.swift */,
+				51602C081FD0752800F07331 /* UserDetailAssembler.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -270,8 +295,8 @@
 		51602BD61FCEB74900F07331 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				51602C111FD152DE00F07331 /* UserLocationEntity.swift */,
 				51602BD91FCEB7BB00F07331 /* UserEntity.swift */,
-				51602BDD1FCEBD3D00F07331 /* LocationEntity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,6 +304,7 @@
 		51602BE31FCEE14000F07331 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				51602C0C1FD1520700F07331 /* Models */,
 				51602BE41FCEE15200F07331 /* GetUsersUseCase.swift */,
 			);
 			path = Users;
@@ -289,6 +315,7 @@
 			children = (
 				51602BE91FCEFE2200F07331 /* Collection View */,
 				51602BFD1FD066F300F07331 /* ArrayExtension.swift */,
+				51602C171FD17B2E00F07331 /* ImageViewExtension.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -313,6 +340,28 @@
 				51602BFA1FCF0E4F00F07331 /* UserListCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		51602BFF1FD0749B00F07331 /* User Detail */ = {
+			isa = PBXGroup;
+			children = (
+				51602C001FD074B200F07331 /* UserDetailViewController.swift */,
+				51602C011FD074B200F07331 /* UserDetailViewController.xib */,
+				51602C041FD074F400F07331 /* UserDetailRouter.swift */,
+				51602C061FD0750100F07331 /* UserDetailPresenter.swift */,
+			);
+			path = "User Detail";
+			sourceTree = "<group>";
+		};
+		51602C0C1FD1520700F07331 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				51602C0D1FD1521300F07331 /* User.swift */,
+				51602C0F1FD1521D00F07331 /* UserMapper.swift */,
+				51602C131FD152F400F07331 /* UserLocation.swift */,
+				51602C151FD153C100F07331 /* UserLocationMapper.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51602BB21FCD813A00F07331 /* Assets.xcassets in Resources */,
+				51602C031FD074B200F07331 /* UserDetailViewController.xib in Resources */,
 				51602BFC1FCF0E4F00F07331 /* UserListCollectionViewCell.xib in Resources */,
 				51602BCE1FCDE1DE00F07331 /* UserListViewController.xib in Resources */,
 				51602BB31FCD813A00F07331 /* LaunchScreen.storyboard in Resources */,
@@ -552,24 +602,34 @@
 				51602BD11FCDE2E400F07331 /* InterfaceLoaderApplicationService.swift in Sources */,
 				51602BB51FCD813A00F07331 /* AppDelegate.swift in Sources */,
 				51602BD81FCEB76B00F07331 /* UsersRepository.swift in Sources */,
+				51602C0E1FD1521300F07331 /* User.swift in Sources */,
+				51602C141FD152F400F07331 /* UserLocation.swift in Sources */,
 				51602BC51FCD869200F07331 /* AlamofireClient.swift in Sources */,
 				51602BC71FCDDF0D00F07331 /* AppAssembler.swift in Sources */,
 				51602BE51FCEE15200F07331 /* GetUsersUseCase.swift in Sources */,
 				51602BED1FCEFE5D00F07331 /* ArrayAdapter.swift in Sources */,
 				51602BF51FCF00A300F07331 /* UserListAdapter.swift in Sources */,
+				51602C121FD152DF00F07331 /* UserLocationEntity.swift in Sources */,
+				51602C161FD153C100F07331 /* UserLocationMapper.swift in Sources */,
 				51602BDC1FCEB80E00F07331 /* UsersRemoteDataSource.swift in Sources */,
 				51602BBB1FCD82A300F07331 /* APIDefinition.swift in Sources */,
+				51602C021FD074B200F07331 /* UserDetailViewController.swift in Sources */,
 				51602BBF1FCD843000F07331 /* APIRequest.swift in Sources */,
 				51602BE71FCEF5AC00F07331 /* UserListViewController.swift in Sources */,
+				51602C091FD0752800F07331 /* UserDetailAssembler.swift in Sources */,
 				51602BD31FCDE32900F07331 /* ApplicationService.swift in Sources */,
-				51602BDE1FCEBD3D00F07331 /* LocationEntity.swift in Sources */,
 				51602BEB1FCEFE3100F07331 /* CollectionViewAdapter.swift in Sources */,
 				51602BDA1FCEB7BB00F07331 /* UserEntity.swift in Sources */,
+				51602C181FD17B2E00F07331 /* ImageViewExtension.swift in Sources */,
 				51602BF31FCEFF3B00F07331 /* BaseCollectionViewCell.swift in Sources */,
 				51602BEF1FCEFEBA00F07331 /* CollectionViewDataSource.swift in Sources */,
+				51602C051FD074F400F07331 /* UserDetailRouter.swift in Sources */,
+				51602C071FD0750100F07331 /* UserDetailPresenter.swift in Sources */,
+				51602C101FD1521D00F07331 /* UserMapper.swift in Sources */,
 				51602BF81FCF01D900F07331 /* UserListCollectionViewCellRenderer.swift in Sources */,
 				51602BF11FCEFEEC00F07331 /* UICollectionViewExtension.swift in Sources */,
 				51602BE21FCED9E400F07331 /* UserListRouter.swift in Sources */,
+				51602C0B1FD141F200F07331 /* RegisteredDataTransform.swift in Sources */,
 				51602BC91FCDDFA000F07331 /* UserListAssembler.swift in Sources */,
 				51602BE01FCECB8000F07331 /* UserListPresenter.swift in Sources */,
 				51602BC11FCD84AC00F07331 /* NetworkClient.swift in Sources */,

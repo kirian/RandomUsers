@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate var applicationServices = [ApplicationService]()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow()
+        window = UIWindow(frame: UIScreen.main.bounds)
         initializeServices(window: window)
         applicationServices.forEach { $0.application(application, didFinishLaunchingWithOptions: launchOptions, window: window) }
 

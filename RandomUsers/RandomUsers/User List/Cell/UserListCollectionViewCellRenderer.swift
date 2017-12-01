@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class UserListCollectionViewCellRenderer {
-    static func render(userModel: UserEntity, indexPath: IndexPath, collectionView: UICollectionView) -> UserListCollectionViewCell {
+    static func render(userModel: User, indexPath: IndexPath, collectionView: UICollectionView) -> UserListCollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserListCollectionViewCell.preferredReuseIdentifier(), for: indexPath) as! UserListCollectionViewCell
 
         if let name = userModel.nameFirst,

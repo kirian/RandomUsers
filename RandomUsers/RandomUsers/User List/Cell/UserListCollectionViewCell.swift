@@ -23,7 +23,8 @@ class UserListCollectionViewCell: BaseCollectionViewCell {
     
     var imageURL: URL? {
         didSet {
-            imageView.kf.setImage(with: imageURL)
+            imageView.rnd_users_rounded(url: imageURL)
+            imageView.layer.shouldRasterize = true
         }
     }
     
@@ -41,6 +42,7 @@ class UserListCollectionViewCell: BaseCollectionViewCell {
 
     override func setupView() {
         super.setupView()
+        imageView.clipsToBounds = false
         contentView.backgroundColor = UIColor.white
     }
 }
