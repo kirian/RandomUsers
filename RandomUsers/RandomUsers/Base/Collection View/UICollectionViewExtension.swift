@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 
 extension UICollectionView {
-    func rand_registerCell(_ type: BaseCollectionViewCell.Type) {
+    func rnd_users_registerCell(_ type: BaseCollectionViewCell.Type) {
         let nib = UINib(nibName: type.preferredReuseIdentifier(), bundle: nil)
         self.register(nib, forCellWithReuseIdentifier: type.preferredReuseIdentifier())
     }
     
-    func rand_registerClass(_ type: BaseCollectionViewCell.Type) {
+    func rnd_users_registerClass(_ type: BaseCollectionViewCell.Type) {
         self.register(type, forCellWithReuseIdentifier: type.preferredReuseIdentifier())
     }
 }

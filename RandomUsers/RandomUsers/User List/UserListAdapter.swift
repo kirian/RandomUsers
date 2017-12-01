@@ -9,16 +9,16 @@
 import Foundation
 import UIKit
 
-class UserListAdapter: ArrayAdapter<UserEntity> {
+class UserListAdapter: ArrayAdapter<User> {
     convenience init() {
         self.init(data: [])
     }
     
-    required init(data: [UserEntity]) {
+    required init(data: [User]) {
         super.init(data: data)
     }
     
-    override func cellForCollectionView(collectionView: UICollectionView, item: UserEntity, indexPath: IndexPath) -> UICollectionViewCell {
+    override func cellForCollectionView(collectionView: UICollectionView, item: User, indexPath: IndexPath) -> UICollectionViewCell {
         return UserListCollectionViewCellRenderer.render(userModel: item, indexPath: indexPath, collectionView: collectionView)
     }
     

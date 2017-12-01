@@ -1,5 +1,5 @@
 //
-//  LocationEntity.swift
+//  UserLocationEntity.swift
 //  RandomUsers
 //
 //  Created by Kirian Anglès on 29/11/17.
@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class LocationEntity: Mappable {
+class UserLocationEntity: Mappable {
     var street: String?
     var city: String?
     var state: String?
@@ -32,5 +32,16 @@ class LocationEntity: Mappable {
         city        <- map["city"]
         state       <- map["state"]
         postcode    <- map["postcode"]
+    }
+    
+    func address() -> String {
+        var address: String = ""
+        if let street = street,
+        let city = city,
+        let state = state {
+            address = street + " " + city + " " + state
+        }
+        
+        return address
     }
 }

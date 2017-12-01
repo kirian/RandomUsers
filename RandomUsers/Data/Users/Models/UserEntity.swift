@@ -14,7 +14,7 @@ class UserEntity: Mappable {
     var nameTitle: String?
     var nameFirst: String?
     var nameLast: String?
-    var location: LocationEntity?
+    var location: UserLocationEntity?
     var email: String?
     var phone: String?
     var registered: Date?
@@ -26,7 +26,7 @@ class UserEntity: Mappable {
          nameTitle: String?,
          nameFirst: String?,
          nameLast: String?,
-         location: LocationEntity?,
+         location: UserLocationEntity?,
          email: String?,
          phone: String?,
          registered: Date?,
@@ -43,7 +43,6 @@ class UserEntity: Mappable {
     }
     
     func mapping(map: Map) {
-        let dateTransform = DateTransform()
         gender      <- map["gender"]
         nameTitle   <- map["name.title"]
         nameFirst   <- map["name.first"]
@@ -51,7 +50,7 @@ class UserEntity: Mappable {
         location    <- map["location"]
         email       <- map["email"]
         phone       <- map["phone"]
-        registered  <- (map["registered"], dateTransform)
+        registered  <- (map["registered"], RegisteredDateTransform())
         picture     <- map["picture.large"]
     }
 }
