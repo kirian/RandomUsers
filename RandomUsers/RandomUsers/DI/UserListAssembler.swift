@@ -12,9 +12,10 @@ protocol UserListAssembler {
     func resolve() -> UserListViewController
     func resolve() -> UserListPresenterType
     func resolve() -> GetUsersUseCaseType
+    func resolve() -> RemoveUserUseCaseType
     func resolve() -> UsersRepositoryType
     func resolve() -> UsersRemoteDataSourceType
-    func resolve() -> NetworkClient
+    func resolve() -> UsersLocalDataSourceType
     func resolve() -> UserListAdapter
     func resolve(with adapter: UserListAdapter) -> CollectionViewDataSource<UserListAdapter>
     func resolve() -> UserDetailRouterType
@@ -30,6 +31,7 @@ extension UserListAssembler where Self: Assembler {
     
     func resolve() -> UserListPresenterType {
         return UserListPresenter(getUsersUseCase: resolve(),
+                                 removeUserUseCase: resolve(),
                                  userDetailRouter: resolve())
     }
     
@@ -37,18 +39,23 @@ extension UserListAssembler where Self: Assembler {
         return GetUsersUseCase(usersRepository: resolve())
     }
     
+    func resolve() -> RemoveUserUseCaseType {
+        return RemoveUserUseCase(usersRepository: resolve())
+    }
+    
     func resolve() -> UsersRepositoryType {
-        return UsersRepository(remoteDataSource: resolve())
+        return UsersRepository(remoteDataSource: resolve(),
+                               localDataSource: resolve())
     }
     
     func resolve() -> UsersRemoteDataSourceType {
         return UsersRemoteDataSource(networkClient: resolve())
     }
     
-    func resolve() -> NetworkClient {
-        return AlamofireClient(baseURL: URL(string: "https://api.randomuser.me/")!)
+    func resolve() -> UsersLocalDataSourceType {
+        return UsersLocalDataSource(dataStack: resolve())
     }
-    
+
     func resolve() -> UserListAdapter {
         return UserListAdapter()
     }
@@ -59,5 +66,13 @@ extension UserListAssembler where Self: Assembler {
     
     func resolve() -> UserDetailRouterType {
         return UserDetailRouter(assembler: self)
+    }
+    
+    private func resolve() -> NetworkClient {
+        return AlamofireClient(baseURL: URL(string: "https://api.randomuser.me/")!)
+    }
+    
+    private func resolve() -> CoreDataStack {
+        return CoreDataStack()
     }
 }

@@ -19,6 +19,7 @@ class UserEntity: Mappable {
     var phone: String?
     var registered: Date?
     var picture: String?
+    var isRemoved: Bool = false
     
     required init?(map: Map) {}
     
@@ -30,7 +31,8 @@ class UserEntity: Mappable {
          email: String?,
          phone: String?,
          registered: Date?,
-         picture: String?) {
+         picture: String?,
+         isRemoved: Bool = false) {
         self.gender = gender
         self.nameTitle = nameTitle
         self.nameFirst = nameFirst
@@ -40,6 +42,7 @@ class UserEntity: Mappable {
         self.phone = phone
         self.registered = registered
         self.picture = picture
+        self.isRemoved = isRemoved
     }
     
     func mapping(map: Map) {
@@ -59,7 +62,7 @@ extension UserEntity: Equatable {
     static func ==(lhs: UserEntity, rhs: UserEntity) -> Bool {
         if let lhsEmail = lhs.email,
             let rhsEmail = rhs.email {
-        return lhsEmail.range(of: rhsEmail) != nil
+            return lhsEmail.range(of: rhsEmail) != nil
         } else {
             return false
         }

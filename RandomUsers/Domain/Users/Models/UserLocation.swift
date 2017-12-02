@@ -12,13 +12,13 @@ struct UserLocation {
     var street: String?
     var city: String?
     var state: String?
-    var postcode: UInt64?
+    var postcode: Int64?
     var address: String?
     
     init(street: String?,
          city: String?,
          state: String?,
-         postcode: UInt64?,
+         postcode: Int64?,
          address: String?) {
         self.street = street
         self.city = city

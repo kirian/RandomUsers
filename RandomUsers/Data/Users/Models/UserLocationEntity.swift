@@ -13,14 +13,14 @@ class UserLocationEntity: Mappable {
     var street: String?
     var city: String?
     var state: String?
-    var postcode: UInt64?
+    var postcode: Int64?
     
     required init?(map: Map) {}
     
     init(street: String?,
          city: String?,
          state: String?,
-         postcode: UInt64?) {
+         postcode: Int64?) {
         self.street = street
         self.city = city
         self.state = state
