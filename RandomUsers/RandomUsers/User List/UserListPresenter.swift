@@ -67,7 +67,8 @@ class UserListPresenter: UserListPresenterType {
     
     func didTapCell(at index: Int) {
         if let view = view as? UIViewController {
-            userDetailRouter.navigateTo(user: users[index], sourceViewController: view)
+            let user = isFiltering ? filteredUsers[index]: users[index]
+            userDetailRouter.navigateTo(user: user, sourceViewController: view)
         }
     }
     
