@@ -31,12 +31,12 @@ class UserDetailPresenter: UserDetailPresenterType {
     func viewDidLoad() {
         view?.updateInfo(user: user)
         let geocoder: CLGeocoder = CLGeocoder()
-        if let city = user.location?.city {
-            geocoder.geocodeAddressString(city, completionHandler: { (placemarks:[CLPlacemark]?, error: Error?) in
+        if let state = user.location?.state {
+            geocoder.geocodeAddressString(state, completionHandler: { (placemarks:[CLPlacemark]?, error: Error?) in
                 if let placemark = placemarks?.first {
                     self.view?.addPlacemark(placemark: CLPlacemark(placemark: placemark))
                 } else {
-                    self.view?.hideMap(address: city)
+                    self.view?.hideMap(address: state)
                 }
             })
         }

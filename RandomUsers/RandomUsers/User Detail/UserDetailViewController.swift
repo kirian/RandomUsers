@@ -48,13 +48,13 @@ extension UserDetailViewController: UserDetailView {
     }
     
     func addPlacemark(placemark: CLPlacemark) {
-        let pl = MKPlacemark(placemark: placemark)
-        mapView.addAnnotation(pl)
+        let mkPlacemark = MKPlacemark(placemark: placemark)
+        mapView.addAnnotation(mkPlacemark)
         
-        let region = MKCoordinateRegionMakeWithDistance(
-            pl.location!.coordinate, 2000, 2000)
-        
-        mapView.setRegion(region, animated: true)
+        if let location = mkPlacemark.location {
+            let region = MKCoordinateRegionMakeWithDistance(location.coordinate, 2000, 2000)
+            mapView.setRegion(region, animated: true)
+        }
     }
     
     func hideMap(address: String) {

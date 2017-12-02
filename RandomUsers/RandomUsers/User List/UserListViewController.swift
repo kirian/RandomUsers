@@ -73,6 +73,7 @@ extension UserListViewController: UserListView {
 
 extension UserListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        searchBar.resignFirstResponder()
         presenter.didTapCell(at: indexPath.row)
     }
     
