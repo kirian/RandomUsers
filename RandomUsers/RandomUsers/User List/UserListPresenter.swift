@@ -14,6 +14,7 @@ protocol UserListView: class {
     func hideLoadingView()
     func show(users: [User])
     func scrollToItem(at index: Int)
+    func didRemoveUser(dataSourceIndex: Int, indexPath: IndexPath)
 }
 
 protocol UserListPresenterType {
@@ -23,11 +24,13 @@ protocol UserListPresenterType {
     func filterUsers(by text: String)
     func didTapCell(at index: Int)
     func didTapSearchCancel()
+    func willRemoveUser(user: User, at indexPath: IndexPath)
 }
 
 class UserListPresenter: UserListPresenterType {
     weak var view: UserListView?
     private let getUsersUseCase: GetUsersUseCaseType
+    private let removeUserUseCase: RemoveUserUseCaseType
     private let userDetailRouter: UserDetailRouterType
     private let disposeBag: DisposeBag = DisposeBag()
     fileprivate var users: [User] = []
@@ -35,8 +38,10 @@ class UserListPresenter: UserListPresenterType {
     fileprivate var isFiltering:Bool = false
     
     init(getUsersUseCase: GetUsersUseCaseType,
+         removeUserUseCase: RemoveUserUseCaseType,
          userDetailRouter: UserDetailRouterType) {
         self.getUsersUseCase = getUsersUseCase
+        self.removeUserUseCase = removeUserUseCase
         self.userDetailRouter = userDetailRouter
     }
     
@@ -82,6 +87,23 @@ class UserListPresenter: UserListPresenterType {
         }
     }
     
+    func willRemoveUser(user: User, at indexPath: IndexPath) {
+        removeUserUseCase.execute(user: user)
+            .subscribe { [weak self] singleEvent in
+                switch singleEvent {
+                case .success:
+                    if let idx = self?.users.index(where: { u -> Bool in
+                            u.email == user.email
+                    }) {
+                    self?.users.remove(at: idx)
+                    self?.view?.didRemoveUser(dataSourceIndex: idx, indexPath: indexPath)
+                    }
+                case .error:
+                    break
+                }
+            }.disposed(by: disposeBag)
+    }
+    
     //MARK: Retrieve random users
     private func getUsers() {
         getUsersUseCase.execute()
@@ -89,13 +111,12 @@ class UserListPresenter: UserListPresenterType {
                 self?.view?.hideLoadingView()
                 switch singleEvent {
                 case .success(let users):
-                    self?.users.append(contentsOf: users)
+                    self?.users = users
                     if let users = self?.users {
                         self?.view?.show(users: users)
                     }
                     
                 case .error:
-                    // TODO: Show error.
                     break
                 }
             }.disposed(by: disposeBag)

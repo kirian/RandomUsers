@@ -10,6 +10,7 @@ import UIKit
 
 class UserListViewController: UIViewController {
     @IBOutlet fileprivate weak var collectionView: UICollectionView!
+    @IBOutlet fileprivate weak var activityIndicatorView: UIActivityIndicatorView!
     fileprivate let dataSource: CollectionViewDataSource<UserListAdapter>
     fileprivate var presenter: UserListPresenterType
     fileprivate let searchBar: UISearchBar
@@ -47,8 +48,13 @@ class UserListViewController: UIViewController {
 }
 
 extension UserListViewController: UserListView {
-    func showLoadingView() {}
-    func hideLoadingView() {}
+    func showLoadingView() {
+        activityIndicatorView.isHidden = false
+    }
+    
+    func hideLoadingView() {
+        activityIndicatorView.isHidden = true
+    }
     
     func show(users: [User]) {
         dataSource.updateSource(sectionsData: users)
@@ -58,6 +64,10 @@ extension UserListViewController: UserListView {
     func scrollToItem(at index: Int) {
         let indexPath = IndexPath(item: index, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
+    }
+    
+    func didRemoveUser(dataSourceIndex: Int, indexPath: IndexPath) {
+        collectionView.deleteItems(at: [indexPath])
     }
 }
 
@@ -71,8 +81,9 @@ extension UserListViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+        let user = dataSource.adapter.item(at: indexPath)
+        presenter.willRemoveUser(user: user, at: indexPath)
         dataSource.adapter.removeItem(at: indexPath)
-        collectionView.deleteItems(at: [indexPath])
     }
 }
 
