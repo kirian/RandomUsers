@@ -65,11 +65,11 @@
 		51B171491FD3251D0089195B /* UsersLocalDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B171451FD3251C0089195B /* UsersLocalDataSourceTest.swift */; };
 		51B1714A1FD3251D0089195B /* UsersDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B171461FD3251C0089195B /* UsersDataSourceTests.swift */; };
 		51B1714C1FD3254E0089195B /* UsersRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B1714B1FD3254E0089195B /* UsersRepositoryTests.swift */; };
-		51B171501FD326E30089195B /* TestAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B1714F1FD326E30089195B /* TestAssembler.swift */; };
 		51B171521FD32A540089195B /* GetUsersUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B171511FD32A540089195B /* GetUsersUseCaseTest.swift */; };
 		51B171541FD338F20089195B /* RemoveUserUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B171531FD338F20089195B /* RemoveUserUseCaseTest.swift */; };
 		51B171571FD3812A0089195B /* UserListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B171561FD3812A0089195B /* UserListPresenterTests.swift */; };
 		51B171591FD383570089195B /* UserListViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B171581FD383570089195B /* UserListViewTest.swift */; };
+		51B1715C1FD395E90089195B /* TestAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B1715B1FD395E80089195B /* TestAssembler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,11 +145,11 @@
 		51B171451FD3251C0089195B /* UsersLocalDataSourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersLocalDataSourceTest.swift; sourceTree = "<group>"; };
 		51B171461FD3251C0089195B /* UsersDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersDataSourceTests.swift; sourceTree = "<group>"; };
 		51B1714B1FD3254E0089195B /* UsersRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepositoryTests.swift; sourceTree = "<group>"; };
-		51B1714F1FD326E30089195B /* TestAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAssembler.swift; sourceTree = "<group>"; };
 		51B171511FD32A540089195B /* GetUsersUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersUseCaseTest.swift; sourceTree = "<group>"; };
 		51B171531FD338F20089195B /* RemoveUserUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveUserUseCaseTest.swift; sourceTree = "<group>"; };
 		51B171561FD3812A0089195B /* UserListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListPresenterTests.swift; sourceTree = "<group>"; };
 		51B171581FD383570089195B /* UserListViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewTest.swift; sourceTree = "<group>"; };
+		51B1715B1FD395E80089195B /* TestAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAssembler.swift; sourceTree = "<group>"; };
 		871166E89A1996A9E2F75A67 /* Pods-RandomUsersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomUsersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RandomUsersTests/Pods-RandomUsersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C34B298F44EF9F4614345305 /* Pods-RandomUsers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomUsers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RandomUsers/Pods-RandomUsers.debug.xcconfig"; sourceTree = "<group>"; };
 		CEE81E4936DF97F209023EA3 /* Pods-RandomUsers-RandomUsersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomUsers-RandomUsersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RandomUsers-RandomUsersTests/Pods-RandomUsers-RandomUsersTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -225,6 +225,7 @@
 		51602B9A1FCD6FF300F07331 /* RandomUsersTests */ = {
 			isa = PBXGroup;
 			children = (
+				51B1715A1FD395E80089195B /* DI */,
 				51B171551FD3811C0089195B /* App */,
 				51B171331FD2C4310089195B /* Domain */,
 				51B171321FD2C4220089195B /* Data */,
@@ -260,7 +261,6 @@
 		51602BB01FCD813A00F07331 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				51B1714E1FD326CA0089195B /* DI */,
 				51602BB91FCD828500F07331 /* Base */,
 				51602BD41FCEB74900F07331 /* Users */,
 			);
@@ -462,14 +462,6 @@
 			path = "Data Source";
 			sourceTree = "<group>";
 		};
-		51B1714E1FD326CA0089195B /* DI */ = {
-			isa = PBXGroup;
-			children = (
-				51B1714F1FD326E30089195B /* TestAssembler.swift */,
-			);
-			path = DI;
-			sourceTree = SOURCE_ROOT;
-		};
 		51B171551FD3811C0089195B /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,6 +469,14 @@
 				51B171581FD383570089195B /* UserListViewTest.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		51B1715A1FD395E80089195B /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				51B1715B1FD395E80089195B /* TestAssembler.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -762,10 +762,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51B1715C1FD395E90089195B /* TestAssembler.swift in Sources */,
 				51B1713D1FD311B80089195B /* NetworkClient.swift in Sources */,
 				51B1714A1FD3251D0089195B /* UsersDataSourceTests.swift in Sources */,
 				51B171571FD3812A0089195B /* UserListPresenterTests.swift in Sources */,
-				51B171501FD326E30089195B /* TestAssembler.swift in Sources */,
 				51B171481FD3251D0089195B /* NetworkClientStub.swift in Sources */,
 				51B1713E1FD311D50089195B /* APIDefinition.swift in Sources */,
 				51B171491FD3251D0089195B /* UsersLocalDataSourceTest.swift in Sources */,
