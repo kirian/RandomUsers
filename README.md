@@ -10,8 +10,7 @@
 * The user information is persistent. (using Core Data).
 * The most important parts of the project has ben tested.
 
-This project is implemented with the Clean Architecture approach and use of RxSwift, which makes binding between layers so easy.
-The 
+This project is implemented with the Clean Architecture approach and use of RxSwift.
 
 [<img src="https://github.com/kirian/RandomUsers/blob/master/UserListView.png" width="200" />
 <img src="https://github.com/kirian/RandomUsers/blob/master/FilteringUsers.png" width="200" />
