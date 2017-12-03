@@ -11,7 +11,15 @@
 * The most important parts of the project has ben tested.
 
 This project is implemented with the Clean Architecture approach and use of RxSwift, which makes binding between layers so easy.
+The 
 
 [<img src="https://github.com/kirian/RandomUsers/blob/master/UserListView.png" width="200" />
 <img src="https://github.com/kirian/RandomUsers/blob/master/FilteringUsers.png" width="200" />
 <img src="https://github.com/kirian/RandomUsers/blob/master/UserDetailView.png" width="200" />]
+
+
+### Links
+* [RxSwift](https://github.com/ReactiveX/RxSwift)
+* [Alamofire](https://github.com/Alamofire/Alamofire)
+* [Robert C Martin - Clean Architecture and Design](https://www.youtube.com/watch?v=Nsjsiz2A9mg)
+* [Dependency Injection Assembler Approach](https://medium.com/makingtuenti/dependency-injection-in-swift-part-1-236fddad144a)
