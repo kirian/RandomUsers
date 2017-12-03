@@ -27,7 +27,7 @@ class UsersLocalDataSource: UsersLocalDataSourceType {
         let single = Single<[UserEntity]>.create {single -> Disposable in
             self.dataStack.persistentContainer.performBackgroundTask { context  in
                 let fetchRequest: NSFetchRequest<CDUserEntity> = CDUserEntity.fetchRequest()
-                fetchRequest.predicate = NSPredicate(format: "isRemoved == false")
+               // fetchRequest.predicate = NSPredicate(format: "isRemoved == false")
                 
                 do {
                     let fetchedEntities = try context.fetch(fetchRequest)

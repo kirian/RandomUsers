@@ -14,7 +14,7 @@ protocol UsersDataSource {
 }
 
 protocol UsersRepositoryType {
-    func getUsers() -> Single<[UserEntity]>
+    func getUsers(results: UInt16) -> Single<[UserEntity]>
     func removeUser(userEntity: UserEntity) -> Single<Bool>
 }
 
@@ -28,8 +28,8 @@ class UsersRepository: UsersRepositoryType {
         self.localDataSource = localDataSource
     }
     
-    func getUsers() -> Single<[UserEntity]> {
-        return Single.zip(remoteDataSource.getUsers(results: 9)
+    func getUsers(results: UInt16) -> Single<[UserEntity]> {
+        return Single.zip(remoteDataSource.getUsers(results: results)
             .do(onNext: { [weak self] userEntities in
                 // Remove duplicated users from server and save to disk
                 let remoteEntities = userEntities.removeDuplicates()
@@ -53,6 +53,8 @@ class UsersRepository: UsersRepositoryType {
     
     private func availableUserEntities(remoteUserEntities: [UserEntity],
                                        localUserEntities: [UserEntity]) -> [UserEntity] {
-        return (remoteUserEntities + localUserEntities).removeDuplicates()
+        return (localUserEntities + remoteUserEntities).removeDuplicates().filter { userEntity -> Bool in
+            return !userEntity.isRemoved
+        }
     }
 }

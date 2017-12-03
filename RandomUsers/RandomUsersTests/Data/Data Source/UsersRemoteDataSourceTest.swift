@@ -11,12 +11,14 @@ import RxSwift
 
 class UsersRemoteDataSourceTest: UsersRemoteDataSourceType {
     private let networkClient: NetworkClient
-    
+    var getUsersCalled = false
+
     init(networkClient: NetworkClient) {
         self.networkClient = networkClient
     }
     
     func getUsers(results: UInt16) -> Single<[UserEntity]> {
+        getUsersCalled = true
         return networkClient.requestArray(with: UsersAPIDefinitionTest.list(results: results))
     }
 }
