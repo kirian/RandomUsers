@@ -1,7 +1,7 @@
 # RandomUsers
  This is a test project in Swift to list of random users from http://randomuser.me/ API
  
-#### Take into account:
+#### Overall Approach:
 * Avoid duplicated users. (checking email)
 * Show the list sorted by user name.
 * Fetch more random users when scroll at the end of the list.
