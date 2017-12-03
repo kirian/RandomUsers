@@ -1,5 +1,5 @@
 //
-//  RandomUsersTests.swift
+//  UsersDataSourceTests.swift
 //  RandomUsersTests
 //
 //  Created by Kirian Anglès on 28/11/17.
@@ -12,9 +12,10 @@ import RxTest
 
 @testable import RandomUsers
 
-class RandomUsersTests: XCTestCase {
+class UsersDataSourceTests: XCTestCase {
     private var userListObserver: TestableObserver<[UserEntity]>!
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
+    private let assembler = TestAssembler()
 
     override func setUp() {
         super.setUp()
@@ -28,15 +29,14 @@ class RandomUsersTests: XCTestCase {
         super.tearDown()
     }
     
-    func testGetUsersHappyCase() {
+    func testGetUsersFromRemoteDataSourceHappyCase() {
         // Given
-        let networkClientStub = NetworkClientStub(filename: "GET_Users_v1.1")
-        let dataSource = UsersRemoteDataSourceTest(networkClient: networkClientStub)
+        let dataSource: UsersRemoteDataSourceType = assembler.resolve()
         
         // When
-        dataSource.getUsers(results: 3).asObservable().subscribe(userListObserver).disposed(by: disposeBag)
+        dataSource.getUsers(results: 2).asObservable().subscribe(userListObserver).disposed(by: disposeBag)
         
         // Then
-        XCTAssertEqual(userListObserver.events[0].value.element?.count, 3)
+        XCTAssertEqual(userListObserver.events[0].value.element?.count, 2)
     }
 }

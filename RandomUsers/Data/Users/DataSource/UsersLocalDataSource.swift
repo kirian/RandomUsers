@@ -26,9 +26,7 @@ class UsersLocalDataSource: UsersLocalDataSourceType {
     func getUsers() -> Single<[UserEntity]> {
         let single = Single<[UserEntity]>.create {single -> Disposable in
             self.dataStack.persistentContainer.performBackgroundTask { context  in
-                let fetchRequest: NSFetchRequest<CDUserEntity> = CDUserEntity.fetchRequest()
-                fetchRequest.predicate = NSPredicate(format: "isRemoved == false")
-                
+                let fetchRequest: NSFetchRequest<CDUserEntity> = CDUserEntity.fetchRequest()                
                 do {
                     let fetchedEntities = try context.fetch(fetchRequest)
                     let userEntities: [UserEntity] = fetchedEntities.flatMap({cdUserEntity -> UserEntity in

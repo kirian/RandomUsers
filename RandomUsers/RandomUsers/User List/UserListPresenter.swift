@@ -31,7 +31,7 @@ class UserListPresenter: UserListPresenterType {
     weak var view: UserListView?
     private let getUsersUseCase: GetUsersUseCaseType
     private let removeUserUseCase: RemoveUserUseCaseType
-    private let userDetailRouter: UserDetailRouterType
+    private let userDetailRouter: UserDetailRouterType?
     private let disposeBag: DisposeBag = DisposeBag()
     fileprivate var users: [User] = []
     fileprivate var filteredUsers: [User] = []
@@ -39,7 +39,7 @@ class UserListPresenter: UserListPresenterType {
     
     init(getUsersUseCase: GetUsersUseCaseType,
          removeUserUseCase: RemoveUserUseCaseType,
-         userDetailRouter: UserDetailRouterType) {
+         userDetailRouter: UserDetailRouterType?) {
         self.getUsersUseCase = getUsersUseCase
         self.removeUserUseCase = removeUserUseCase
         self.userDetailRouter = userDetailRouter
@@ -66,9 +66,10 @@ class UserListPresenter: UserListPresenterType {
     }
     
     func didTapCell(at index: Int) {
-        if let view = view as? UIViewController {
+        if let view = view as? UIViewController,
+            let router = userDetailRouter {
             let user = isFiltering ? filteredUsers[index]: users[index]
-            userDetailRouter.navigateTo(user: user, sourceViewController: view)
+            router.navigateTo(user: user, sourceViewController: view)
         }
     }
     
@@ -107,7 +108,7 @@ class UserListPresenter: UserListPresenterType {
     
     //MARK: Retrieve random users
     private func getUsers() {
-        getUsersUseCase.execute()
+        getUsersUseCase.execute(results: 10)
             .subscribe { [weak self] singleEvent in
                 self?.view?.hideLoadingView()
                 switch singleEvent {

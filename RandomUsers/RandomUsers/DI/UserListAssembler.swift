@@ -19,6 +19,7 @@ protocol UserListAssembler {
     func resolve() -> UserListAdapter
     func resolve(with adapter: UserListAdapter) -> CollectionViewDataSource<UserListAdapter>
     func resolve() -> UserDetailRouterType
+    func resolve() -> NetworkClient
 }
 
 extension UserListAssembler where Self: Assembler {
@@ -68,7 +69,7 @@ extension UserListAssembler where Self: Assembler {
         return UserDetailRouter(assembler: self)
     }
     
-    private func resolve() -> NetworkClient {
+    func resolve() -> NetworkClient {
         return AlamofireClient(baseURL: URL(string: "https://api.randomuser.me/")!)
     }
     
