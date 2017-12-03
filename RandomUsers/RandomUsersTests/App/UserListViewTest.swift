@@ -27,8 +27,9 @@ class UserListViewTest: UserListView {
         userList = users
     }
     
-    func scrollToItem(at index: Int) {}
     func didRemoveUser(dataSourceIndex: Int, indexPath: IndexPath) {
         userList.remove(at: dataSourceIndex)
     }
+    
+    func scrollToItem(at index: Int) {}
 }

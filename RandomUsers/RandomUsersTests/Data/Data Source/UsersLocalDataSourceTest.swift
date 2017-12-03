@@ -33,13 +33,11 @@ class UsersLocalDataSourceTest: UsersLocalDataSourceType {
                 usersToInsert.append(userEntity)
             }
         }
-        
         localUsers.append(contentsOf: usersToInsert)
     }
     
     func removeUser(userEntity: UserEntity) -> Single<Bool> {
         removeUserCalled = true
-        
         if let email = userEntity.email {
             let found: UserEntity? = localUsers.filter({ $0.email == email }).first
             if found != nil {

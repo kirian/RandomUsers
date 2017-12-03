@@ -27,7 +27,6 @@ class UsersRepositoryTests: XCTestCase {
         let schedulerLocal = TestScheduler(initialClock: 1)
         userListLocalObserver = schedulerLocal.createObserver([UserEntity].self)
         schedulerLocal.start()
-
     }
     
     override func tearDown() {
@@ -38,6 +37,7 @@ class UsersRepositoryTests: XCTestCase {
     func testGetUsersHappyCase() {
         // Given
         let usersRepository: UsersRepositoryType = assembler.resolve()
+        
         // When
         usersRepository.getUsers(results: 3).asObservable().subscribe(userListObserver).disposed(by: disposeBag)
         
@@ -52,6 +52,7 @@ class UsersRepositoryTests: XCTestCase {
         let localDataSource = UsersLocalDataSourceTest()
         let usersRepository = UsersRepository(remoteDataSource: remoteDataSource,
                                               localDataSource: localDataSource)
+        
         // When
         usersRepository.getUsers(results: 10).asObservable().subscribe(userListObserver).disposed(by: disposeBag)
 
@@ -66,6 +67,7 @@ class UsersRepositoryTests: XCTestCase {
         let localDataSource = UsersLocalDataSourceTest()
         let usersRepository = UsersRepository(remoteDataSource: remoteDataSource,
                                               localDataSource: localDataSource)
+        
         // When
         usersRepository.getUsers(results: 10).asObservable().subscribe(userListObserver).disposed(by: disposeBag)
         
@@ -80,6 +82,7 @@ class UsersRepositoryTests: XCTestCase {
         let localDataSource = UsersLocalDataSourceTest()
         let usersRepository = UsersRepository(remoteDataSource: remoteDataSource,
                                               localDataSource: localDataSource)
+        
         // When
         usersRepository.getUsers(results: 10).asObservable().subscribe(userListObserver).disposed(by: disposeBag)
         

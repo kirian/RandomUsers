@@ -28,8 +28,34 @@ class UserListPresenterTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testListFirstTenUsersFromPresenter() {
+
+    func testShowLoadingViewHasBeenCalled() {
+        // Given
+        let view: UserListViewTest = UserListViewTest()
+        var userListPresenter: UserListPresenterType = assembler.resolve()
+        userListPresenter.view = view
+        
+        // When
+        userListPresenter.viewDidLoad()
+        
+        // Then
+        XCTAssertTrue(view.showLoadingViewCalled)
+    }
+
+    func testHideLoadingViewHasBeenCalled() {
+        // Given
+        let view: UserListViewTest = UserListViewTest()
+        var userListPresenter: UserListPresenterType = assembler.resolve()
+        userListPresenter.view = view
+        
+        // When
+        userListPresenter.viewDidLoad()
+        
+        // Then
+        XCTAssertTrue(view.hideLoadingViewCalled)
+    }
+
+    func testListUsersFromPresenter() {
         // Given
         let view: UserListViewTest = UserListViewTest()
         var userListPresenter: UserListPresenterType = assembler.resolve()
