@@ -16,6 +16,15 @@ This project is implemented with the Clean Architecture approach and use of RxSw
 <img src="https://github.com/kirian/RandomUsers/blob/master/FilteringUsers.png" width="200" />
 <img src="https://github.com/kirian/RandomUsers/blob/master/UserDetailView.png" width="200" />]
 
+### Installation
+```sh
+$ git clone https://github.com/kirian/RandomUsers RandomUsersTest
+$ cd RandomUsersTest/RandomUsers
+```
+You need Pod installed globally:
+```sh
+$ pod install
+```
 
 ### Links
 * [RxSwift](https://github.com/ReactiveX/RxSwift)
